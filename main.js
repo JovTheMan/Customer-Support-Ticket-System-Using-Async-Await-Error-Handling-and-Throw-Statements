@@ -30,7 +30,12 @@ async function fetchTickets() {
         errorMessage.style.display = 'block';
         errorMessage.textContent = `Error: ${error.message}`;
     } finally {
-
+ // Task #4: Use finally to Ensure Cleanup
+        if (ticketContainer.innerHTML === 'Loading tickets...') {
+            ticketContainer.innerHTML = 'No tickets to display.';
+        }
+    }
+}
 
     // Task #3: Display Tickets Dynamically on the Page
 function displayTickets(tickets) {
